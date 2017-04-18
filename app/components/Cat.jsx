@@ -20,7 +20,7 @@ var Cat = React.createClass({
     return (
       <div>
         <h1 className="text-center">{this.state.name}</h1>
-        <button className="switchCat" onClick={this.handleClick}>See another cat</button>
+        <button className="switchCat button hollow" onClick={this.handleClick}>See another cat</button>
         <img src={this.state.imageUrl}></img>
       </div>
     )
