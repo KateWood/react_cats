@@ -1,20 +1,22 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var {Route, Router, IndexRoute, hashHistory} = require('react-router');
-var Main = require('Main');
-var Cat = require('Cat');
+var React = require('react'),
+  ReactDOM = require('react-dom'),
+  {Route, Router, IndexRoute, hashHistory} = require('react-router'),
+  Main = require('Main'),
+  Cat = require('Cat')
 
 // Load foundation
 require('style!css!foundation-sites/dist/foundation.min.css')
-$(document).foundation();
+$(document).foundation()
 
 // App css
 require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
   <Router history={hashHistory}>
-    <Route path="/" component={Cat}>
+    <Route path="/" component={Main}>
+      <Route path="cats" component={Cat}/>
+      <IndexRoute component={Cat}/>
     </Route>
   </Router>,
   document.getElementById('app')
-);
+)

@@ -24,6 +24,8 @@ module.exports = {
     alias: {
       Main: 'app/components/Main.jsx',
       Cat: 'app/components/Cat.jsx',
+      Nav: 'app/components/Nav.jsx',
+      catList: 'app/api/cats.js',
       applicationStyles: 'app/styles/app.scss'
     },
     extensions: ['', '.js', '.jsx']

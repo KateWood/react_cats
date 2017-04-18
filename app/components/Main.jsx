@@ -1,16 +1,15 @@
-var React = require('react');
+var React = require('react'),
+  Nav = require('Nav')
 
 var Main = (props) => {
   return (
     <div>
+      <Nav/>
       <div>
-        <div>
-          <p>Main.jsx Rendered</p>
-          {props.children}
-        </div>
+        {props.children}
       </div>
     </div>
-  );
+  )
 }
 
-module.exports = Main;
+module.exports = Main

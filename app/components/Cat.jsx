@@ -1,4 +1,5 @@
 var React = require('react')
+var catList = require('catList')
 
 var Cat = React.createClass({
   render: function() {
