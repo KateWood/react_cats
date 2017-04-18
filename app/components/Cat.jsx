@@ -1,12 +1,19 @@
-var React = require('react')
-var catList = require('catList')
+var React = require('react'),
+  catList = require('catList')
 
 var Cat = React.createClass({
+  getInitialState: function() {
+    var cat = catList[Math.floor(Math.random() * catList.length)]
+    return {
+      name: cat.name,
+      imageUrl: cat.imageUrl
+    }
+  },
   render: function() {
     return (
       <div>
-        <h1>Kitten</h1>
-        <img src="https://static1.squarespace.com/static/54e8ba93e4b07c3f655b452e/t/56c2a04520c64707756f4267/1455596221531/"></img>
+        <h1>{this.state.name}</h1>
+        <img src={this.state.imageUrl}></img>
       </div>
     )
   }
