@@ -9,10 +9,18 @@ var Cat = React.createClass({
       imageUrl: cat.imageUrl
     }
   },
+  handleClick: function() {
+    var cat = catList[Math.floor(Math.random() * catList.length)]
+    this.setState({
+      name: cat.name,
+      imageUrl: cat.imageUrl
+    })
+  },
   render: function() {
     return (
       <div>
-        <h1>{this.state.name}</h1>
+        <h1 className="text-center">{this.state.name}</h1>
+        <button className="switchCat" onClick={this.handleClick}>See another cat</button>
         <img src={this.state.imageUrl}></img>
       </div>
     )

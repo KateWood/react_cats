@@ -3,3 +3,15 @@ $p-color: #777;
 p {
   color: $p-color;
 }
+
+img {
+  height: 400px;
+  display: block;
+  margin: 0 auto;
+}
+
+.switchCat {
+  display: block;
+  margin: 0 auto;
+  color: violet;
+}
