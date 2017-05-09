@@ -1,7 +1,10 @@
-var cats = require('../cats.js')
+var Cat = require('../models/cat')
 
 function index(req, res) {
-  res.json(cats)
+  Cat.find({}, function(err, cats) {
+    if (err) throw err
+    res.json(cats)
+  })
 }
 
 module.exports = {
