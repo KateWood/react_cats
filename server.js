@@ -1,5 +1,5 @@
 var express = require('express'),
-  mongoose = require('./app/api/config/database'),
+  mongoose = require('./api/config/database'),
   logger = require('morgan'),
   cookieParser = require('cookie-parser'),
   bodyParser = require('body-parser'),
@@ -8,7 +8,7 @@ var express = require('express'),
 // Create our app
 var app = express()
 const PORT = process.env.PORT || 3000
-var apiRoutes = require('./app/api/config/api_routes')
+var apiRoutes = require('./api/config/api_routes')
 
 app.use(function(req, res, next){
   if (req.headers['x-forwarded-proto'] === 'https') {
