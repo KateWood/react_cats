@@ -7,6 +7,17 @@ function index(req, res) {
   })
 }
 
+function create(req, res) {
+  var cat = new Cat(req.body)
+
+  cat.save(function(err, cat) {
+    if (err) throw err
+
+    res.json({message: 'Cat added!', cat: cat})
+  })
+}
+
 module.exports = {
-  index: index
+  index: index,
+  create: create
 }

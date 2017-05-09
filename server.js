@@ -1,12 +1,9 @@
 var express = require('express'),
-  mongoose = require('mongoose'),
-  mongoUri = process.env.MONGODB_URI || 'mongodb://localhost/react-cats',
+  mongoose = require('./app/api/config/database'),
   logger = require('morgan'),
   cookieParser = require('cookie-parser'),
   bodyParser = require('body-parser'),
   path = require('path')
-
-mongoose.connect(mongoUri)
 
 // Create our app
 var app = express()
