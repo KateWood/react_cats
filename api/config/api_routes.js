@@ -1,6 +1,6 @@
 var express = require('express'),
   router = express.Router(),
-  {index} = require('../controllers/cats_controller')
+  {index, create} = require('../controllers/cats_controller')
 
 router.route('/')
   .get(function(req, res) {
@@ -9,5 +9,6 @@ router.route('/')
 
 router.route('/cats')
   .get(index)
+  .post(create)
 
 module.exports = router

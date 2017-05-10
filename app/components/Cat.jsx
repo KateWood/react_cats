@@ -1,20 +1,27 @@
-var React = require('react'),
-  catList = require('catList')
+var React = require('react')
+  // catList = require('catList')
 
 var Cat = React.createClass({
   getInitialState: function() {
-    var cat = catList[Math.floor(Math.random() * catList.length)]
     return {
-      name: cat.name,
-      imageUrl: cat.imageUrl
+      name: 'Mercury',
+      imageUrl: 'https://scontent-lax3-2.xx.fbcdn.net/v/t1.0-9/13263859_10104967170148009_136526232120974780_n.jpg?oh=39176ce2e6f959293c83e011cf23f5a3&oe=597E8203'
     }
   },
   handleClick: function() {
-    var cat = catList[Math.floor(Math.random() * catList.length)]
-    this.setState({
-      name: cat.name,
-      imageUrl: cat.imageUrl
+    var self = this
+    $.getJSON('/api/cats').then(function(cats) {
+      var cat = cats[Math.floor(Math.random() * cats.length)]
+      self.setState({
+        name: cat.name,
+        imageUrl: cat.imageUrl
+      })
     })
+    // var cat = catList[Math.floor(Math.random() * catList.length)]
+    // this.setState({
+    //   name: cat.name,
+    //   imageUrl: cat.imageUrl
+    // })
   },
   render: function() {
     return (
